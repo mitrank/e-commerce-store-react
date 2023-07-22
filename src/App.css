@@ -2,8 +2,8 @@ header {
   text-align: center;
   font-size: 2.5rem;
   padding: 10px 0;
-  background-color: #0b666a;
-  color: antiquewhite;
+  background-color: #457b9d;
+  color: aliceblue;
 }
 
 section {
@@ -13,20 +13,25 @@ section {
 section nav {
   display: flex;
   flex-direction: column;
-  gap: 1rem;
   padding: 1rem;
   font-size: 1.2rem;
-  background-color: #35a29f;
-  color: azure;
+  font-weight: 500;
+  background-color: #a8dadc;
+  color: #103263;
   width: 15%;
+  text-align: center;
 }
 
 section main {
-  padding-bottom: 10px;
-  padding-left: 10px;
-  padding-right: 10px;
+  padding: 1rem;
   width: 100%;
-  background-color: #95feed;
+  background-color: white;
+}
+
+article {
+  padding: 1rem;
+  border: 1px solid #103263;
+  border-radius: 1rem;
 }
 
 footer {
@@ -35,10 +40,6 @@ footer {
   padding: 10px 0;
   background-color: #0b666a;
   color: antiquewhite;
-}
-
-h1 {
-  font-size: 1.5rem;
 }
 
 h3 {
@@ -50,6 +51,18 @@ ul {
   padding-left: 1.2rem;
 }
 
+.category-title {
+  padding: 1rem;
+  border-bottom: 1px solid;
+}
+
+.category-title:hover {
+  cursor: pointer;
+  background-color: #103263;
+  color: #a8dadc;
+  transition: 350ms ease all;
+}
+
 .products {
   display: flex;
   flex-direction: column;
@@ -58,7 +71,7 @@ ul {
 
 .category-product-title {
   font-size: 1.5rem;
-  font-weight: 500;
+  font-weight: 600;
   color: #071952;
 }
 
@@ -75,6 +88,8 @@ ul {
 
 .category-product-finance-price {
   margin-bottom: 1.5rem;
+  color: #e63946;
+  font-weight: 500;
 }
 
 .category-product-info-stock {
@@ -84,7 +99,7 @@ ul {
   border: 1px solid gray;
   padding: 0.5rem;
   border-radius: 5px;
-  background-color: antiquewhite;
+  background-color: #f1faee;
   font-weight: bold;
 }
 
@@ -96,13 +111,20 @@ ul {
 }
 
 .category-product-action > button {
+  cursor: pointer;
   background-color: lightseagreen;
   color: azure;
-  border: 1px solid #071952;
+  border: 1px solid #103263;
   border-radius: 20px;
   width: 130px;
-  height: 30px;
+  height: 40px;
   font-size: 1rem;
+}
+
+.category-product-action > button:hover {
+  background-color: #a8dadc;
+  color: #103263;
+  transition: 350ms ease;
 }
 
 .category-product-finance-price {
