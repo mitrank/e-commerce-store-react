@@ -1,9 +1,11 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { Link, useNavigate } from 'react-router-dom';
 import { styled } from 'styled-components';
+import { CartContext } from '../contexts/CartContext';
 
 const CategoryProduct = ({id, title, image, specs, features, price, stock}) => {
     const navigate = useNavigate();
+    const { addProduct } = useContext(CartContext);
 
     return (
         <CategoryProducts>
@@ -17,12 +19,13 @@ const CategoryProduct = ({id, title, image, specs, features, price, stock}) => {
                 </figure>
 
                 <aside>
+                    {specs?.dimensions &&
                     <ProductInfo>
                         <h3>Dimensions</h3>
                         <label>{specs.dimensions}</label>
-                    </ProductInfo>
+                    </ProductInfo>}
 
-                    {specs.capacity &&
+                    {specs?.capacity &&
                     <ProductInfo>
                         <h3>Capacity</h3>
                         <label>{specs.capacity}</label>
@@ -41,7 +44,7 @@ const CategoryProduct = ({id, title, image, specs, features, price, stock}) => {
                 
                 <ProductFinance>
                     <ProductFinancePrice>
-                        &pound;{price}
+                    &#8377;{price}
                     </ProductFinancePrice>
 
                     <ProductInfoStock>
@@ -51,7 +54,7 @@ const CategoryProduct = ({id, title, image, specs, features, price, stock}) => {
 
                     <ProductAction>
                         <ProductButton onClick={() => navigate(`products/${id}`)}>View Product</ProductButton>
-                        <ProductButton onClick={() => navigate(`basket`)}>Add to Basket</ProductButton>
+                        <ProductButton onClick={() => addProduct({ id, title, price })}>Add to Cart</ProductButton>
                     </ProductAction>
                 </ProductFinance>
             </ProductInfos>
@@ -87,11 +90,11 @@ const ProductInfo = styled.div`
     flex-direction: column;
 
     h3 {
-        margin-bottom: 3rem;
+        margin-bottom: 0rem;
     }
 
     ul {
-        padding-left: 1.2rem;
+        padding-left: 0rem;
         margin-top: 0rem;
     }
 `;

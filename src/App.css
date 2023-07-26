@@ -1,9 +1,32 @@
+a {
+  color: black;
+  text-decoration: none;
+}
+
 header {
   text-align: center;
   font-size: 2.5rem;
-  padding: 10px 0;
+  padding: 1rem;
   background-color: #457b9d;
   color: aliceblue;
+  display: grid;
+  grid-template-columns: 0.1fr 1fr 0.1fr;
+}
+
+header a {
+  color: aliceblue;
+}
+
+#headerHomeIcon {
+  justify-self: start;
+}
+
+#headerTitle {
+  justify-self: center;
+}
+
+#headerCartIcon {
+  justify-self: end;
 }
 
 section {
@@ -14,12 +37,15 @@ section nav {
   display: flex;
   flex-direction: column;
   padding: 1rem;
-  font-size: 1.2rem;
-  font-weight: 500;
   background-color: #a8dadc;
-  color: #103263;
   width: 15%;
   text-align: center;
+}
+
+section nav a {
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: #103263;
 }
 
 section main {
@@ -29,17 +55,17 @@ section main {
 }
 
 footer {
-  font-size: 12px;
   padding: 10px 0;
   background-color: #0b666a;
-  color: antiquewhite;
   display: flex;
   gap: 1rem;
+  color: antiquewhite;
   justify-content: center;
 }
 
-footer > div {
-  cursor: pointer;
+footer a {
+  color: antiquewhite;
+  font-size: 12px;
 }
 
 .category-title {
@@ -48,7 +74,6 @@ footer > div {
 }
 
 .category-title:hover {
-  cursor: pointer;
   background-color: #103263;
   color: #a8dadc;
   transition: 350ms ease all;
